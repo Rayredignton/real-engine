@@ -41,6 +41,14 @@ class ConnectionProvider extends ChangeNotifier {
       ),
     );
   }
+    void fetchPreset(
+
+  ) {
+    _websocket.sink.add(
+""
+    );
+  }
+
 
   void unregisterPreset({
     required String name,

@@ -31,6 +31,7 @@ class _PresetsScreenState extends State<PresetsScreen> {
                   title: "Refresh",
                   onTap: () {
                     model.setUrl("ws://127.0.0.1:30020/remote/presets");
+                    model.fetchPreset();
                   },
                 ),
                 YMargin(150),
@@ -87,10 +88,11 @@ class _PresetStreamState extends State<PresetStream> {
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {
-                        model.registerPreset(name: snapshot.data!.presets![index].toString());
-                        if (tapped ==true)
-                          model.unregisterPreset(name: snapshot.data!.presets![index].toString());
-                        
+                        model.registerPreset(
+                            name: snapshot.data!.presets![index].toString());
+                        if (tapped == true)
+                          model.unregisterPreset(
+                              name: snapshot.data!.presets![index].toString());
                       },
                       child: Container(
                         height: 50,
